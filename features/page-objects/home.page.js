@@ -3,8 +3,13 @@ import { browser, $ } from "@wdio/globals";
 import { Page } from "./page.js";
 
 class homePage extends Page {
-    get clickDropDownMenu() { return $(".customer-welcome"); }
-    get clickMyAccount() { return $(`//a[contains(text(), "My Account")]`); }
+    get clickDropDownMenu() { return $(".page-header button[data-action=customer-menu-toggle"); }
+    clickDropDownItem(text) { return $(`//header//div[@class="customer-menu"]//a[contains(text(), "${text}")]`); }
+
+    async selectUserDropdown(text) {
+        await this.clickDropDownMenu();
+        await this.clickDropDownItem(text);
+    }
 }
 
 export default new homePage();
