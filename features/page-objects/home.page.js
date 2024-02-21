@@ -7,8 +7,8 @@ class homePage extends Page {
     clickDropDownItem(text) { return $(`//header//div[@class="customer-menu"]//a[contains(text(), "${text}")]`); }
 
     async selectUserDropdown(text) {
-        await this.clickDropDownMenu();
-        await this.clickDropDownItem(text);
+        await this.clickDropDownMenu.click();
+        await this.clickDropDownItem(text).click();
     }
 }
 
