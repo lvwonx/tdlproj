@@ -1,5 +1,6 @@
 Feature: Login
 
+    @log
     Scenario Outline: Log in user email and password
         Given I am on home page
         When I click on the Sign In link

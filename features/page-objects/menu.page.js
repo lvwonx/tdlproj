@@ -2,8 +2,6 @@ import { Page } from './page.js';
 import { browser } from '@wdio/globals';
 
 class MenuPage extends Page {
-    menuItem(text) { return $(`//nav//span[text()="${text}"]`); }
-
     async selectMenuItem(menuItems) {
         for (const [i, menuItem] of menuItems.entries()) {
             let el;
